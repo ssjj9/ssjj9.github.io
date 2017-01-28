@@ -1,0 +1,11 @@
+body{
+  background-color:blueviolet;
+  text-align:center;
+}
+
+.container{
+  background-color:ivory;
+  padding 25px;
+  margin:50px;
+  border-radius:25px;
+}
