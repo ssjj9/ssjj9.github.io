@@ -1,22 +1,38 @@
-<div id="game">
-  <div id="players">
-    <input type="button" value="X"
-onclick="chooseX()" />
-    <input type="button" value="O"
-onclick="chooseO()" />
-  <div id="notes">
-  Choose 'X' or 'O' to start playing!
-  </div>
-  </div>
-  <div id="board">
-    <div class="box" id="r1c1" onclick="makeMove('r1c1')"></div>
-    <div class="box" id="r1c2" onclick="makeMove('r1c2')"></div>
-    <div class="box" id="r1c3" onclick="makeMove('r1c3')"></div>
-    <div class="box" id="r2c1" onclick="makeMove('r2c1')"></div>
-    <div class="box" id="r2c2" onclick="makeMove('r2c2')"></div>
-    <div class="box" id="r2c3" onclick="makeMove('r2c3')"></div>
-    <div class="box" id="r3c1" onclick="makeMove('r3c1')"></div>
-    <div class="box" id="r3c2" onclick="makeMove('r3c2')"></div>
-    <div class="box" id="r3c3" onclick="makeMove('r3c3')"></div>
-  </div>
-</div>
+<html>
+	<head>
+		<title>Tic Tac Toe</title>
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+		<script src="myscripts.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<p id="navigation">
+				<a href="index.html"> Home</a> |
+				<a href="aboutme.html">About Me</a> |
+				<a href="projects.html">Projects</a>
+		  </p>
+		  <div id="game">
+		  <div id="players">
+			<input type="button" value="X"
+			onclick="chooseX()" />
+				<input type="button" value="O"
+			onclick="chooseO()" />
+			  <div id="notes">
+			  Choose 'X' or 'O' to start playing!
+			  </div>
+			  </div>
+			  <div id="board">
+				<div class="box" id="r1c1" onclick="makeMove('r1c1')"></div>
+				<div class="box" id="r1c2" onclick="makeMove('r1c2')"></div>
+				<div class="box" id="r1c3" onclick="makeMove('r1c3')"></div>
+				<div class="box" id="r2c1" onclick="makeMove('r2c1')"></div>
+				<div class="box" id="r2c2" onclick="makeMove('r2c2')"></div>
+				<div class="box" id="r2c3" onclick="makeMove('r2c3')"></div>
+				<div class="box" id="r3c1" onclick="makeMove('r3c1')"></div>
+				<div class="box" id="r3c2" onclick="makeMove('r3c2')"></div>
+				<div class="box" id="r3c3" onclick="makeMove('r3c3')"></div>
+			  </div>
+			</div>
+		</div>
+	</body>
+<html>
