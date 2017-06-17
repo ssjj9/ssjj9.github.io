@@ -1,4 +1,3 @@
-
 var operand1;
 var operand2;
 
@@ -44,7 +43,20 @@ function goRight(){
   }
 }
 
-var character = "";
+/* BEGINNING OF TIC TAC TOE CODE */
+
+var player1Wins = 0;
+var player1Ties = 0;
+var player1Losses = 0;
+var player2Wins = 0;
+var player2Ties = 0;
+var player2Losses = 0;
+
+var player1Type = 'X';
+var player2Type = 'O';
+var isWinner = false;
+
+var character = "X";
 
 function chooseX(){
 	character = 'X';
@@ -55,5 +67,100 @@ function chooseO(){
 }
 
 function makeMove(divLocation){
-	document.getElementById(divLocation).innerHTML=character;
+	if(document.getElementById(divLocation).innerHTML === ""){
+	   document.getElementById(divLocation).innerHTML=character;
+	    
+	    switchCharacter();
+	    	
+	}
+	
+	checkwinner();
 }
+
+function switchCharacter(){	    
+	//change to other character
+	    if(character == "X"){
+	    	chooseO();
+   	   }
+	   else{
+	  	   chooseX();
+	   }	
+
+}
+
+function checkwinner(){
+	
+	var r1c1 = document.getElementById("r1c1").innerHTML ;
+	var r2c1 = document.getElementById("r2c1").innerHTML ;
+	var r3c1 = document.getElementById("r3c1").innerHTML ;
+	var r1c2 = document.getElementById("r1c2").innerHTML ;
+	var r2c2 = document.getElementById("r2c2").innerHTML ;
+	var r3c2 = document.getElementById("r3c2").innerHTML ;
+	var r1c3 = document.getElementById("r1c3").innerHTML ;
+	var r2c3 = document.getElementById("r2c3").innerHTML ;
+	var r3c3 = document.getElementById("r3c3").innerHTML ;
+	
+	if(r1c1 == r2c1 && r1c1 == r3c1 && r1c1 !== "" ||
+	   r1c2 == r2c2 && r1c2 == r3c2 && r1c2 !== "" ||
+       r1c3 == r2c3 && r1c3 == r3c3 && r1c3 !== "" ||
+       r1c1 == r1c2 && r1c1 == r1c3 && r1c1 !== "" ||
+	   r2c1 == r2c2 && r2c1 == r2c3 && r2c1 !== "" ||
+       r3c1 == r3c2 && r3c1 == r3c3 && r3c1 !== "" ||
+       r1c1 == r2c2 && r1c1 == r3c3 && r1c1 !== "" ||
+       r1c3 == r2c2 && r1c3 == r3c1 && r1c3 !== "" ){
+    
+    	switchCharacter();
+		document.getElementById("notes").innerHTML="<p>" + character + " is the winner!</p>";
+		
+		isWinner = true;
+		
+
+	}
+	else if(r1c1 !== "" && r1c2 !== "" && r1c3 !== "" && r2c1 !== "" &&
+			r2c2 !== "" && r2c3 !== "" && r3c1 !== "" && r3c2 !== "" &&
+			r3c3 !== "") {
+		document.getElementById("notes").innerHTML="<p>Tie!</p>";
+		player1Ties++;
+		player2Ties++;
+	}
+	
+		if(isWinner == true && character == "X"){
+		player1Wins++;
+		player2Losses++;
+		isWinner = false;
+	}
+		else if(isWinner == true && character =="O"){
+		player2Wins++;
+		player1Losses++;
+		isWinner = false;
+	}
+}
+
+function clear(){
+	var r1c1 = document.getElementById("r1c1").innerHTML="";
+	var r2c1 = document.getElementById("r2c1").innerHTML="";
+	var r3c1 = document.getElementById("r3c1").innerHTML="";
+	var r1c2 = document.getElementById("r1c2").innerHTML="";
+	var r2c2 = document.getElementById("r2c2").innerHTML="";
+	var r3c2 = document.getElementById("r3c2").innerHTML="";
+	var r1c3 = document.getElementById("r1c3").innerHTML="";
+	var r2c3 = document.getElementById("r2c3").innerHTML="";
+	var r3c3 = document.getElementById("r3c3").innerHTML="";
+	document.getElementById("notes").innerHTML="";
+}
+
+function newGame(){
+	location.reload();
+}
+
+function startGame(){
+	clear();
+	switchCharacter();
+	document.getElementById("player1Wins").innerHTML=player1Wins;
+	document.getElementById("player1Ties").innerHTML=player1Ties;
+	document.getElementById("player1Losses").innerHTML=player1Losses;
+	document.getElementById("player2Wins").innerHTML=player2Wins;
+	document.getElementById("player2Ties").innerHTML=player2Ties;
+	document.getElementById("player2Losses").innerHTML=player2Losses;
+}
+
