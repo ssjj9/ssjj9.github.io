@@ -4,35 +4,64 @@
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		<script src="myscripts.js"></script>
 	</head>
-	<body>
+	<body onload="startGame()">
 		<div class="container">
 			<p id="navigation">
 				<a href="index.html"> Home</a> |
 				<a href="aboutme.html">About Me</a> |
 				<a href="projects.html">Projects</a>
-		  </p>
-		  <div id="game">
-		  <div id="players">
-			<input type="button" value="X"
-			onclick="chooseX()" />
-				<input type="button" value="O"
-			onclick="chooseO()" />
-			  <div id="notes">
-			  Choose 'X' or 'O' to start playing!
-			  </div>
-			  </div>
-			  <div id="board">
-				<div class="box" id="r1c1" onclick="makeMove('r1c1')"></div>
-				<div class="box" id="r1c2" onclick="makeMove('r1c2')"></div>
-				<div class="box" id="r1c3" onclick="makeMove('r1c3')"></div>
-				<div class="box" id="r2c1" onclick="makeMove('r2c1')"></div>
-				<div class="box" id="r2c2" onclick="makeMove('r2c2')"></div>
-				<div class="box" id="r2c3" onclick="makeMove('r2c3')"></div>
-				<div class="box" id="r3c1" onclick="makeMove('r3c1')"></div>
-				<div class="box" id="r3c2" onclick="makeMove('r3c2')"></div>
-				<div class="box" id="r3c3" onclick="makeMove('r3c3')"></div>
-			  </div>
-			</div>
+			</p>
+			<div id="game">
+				<div id="gameTitle">
+					Tic Tac Toe
+				</div>
+				<div id="players">
+					  <!--<input type="button" value="X"
+					  onclick="chooseX()" />
+					  <input type="button" value="O"
+					  onclick="chooseO()" />
+					  -->
+					<input type="button" value="New Game" onclick="newGame()" />
+					<input type="button" value="Next Game" onclick="startGame()" />
+					<div id="notes">
+					 	<p>Choose 'X' or 'O' to start playing!</p>
+					</div>
+				</div>
+				<div id="board">
+					<div class="box" id="r1c1" onclick="makeMove('r1c1')"></div>
+					<div class="box" id="r1c2" onclick="makeMove('r1c2')"></div>
+					<div class="box" id="r1c3" onclick="makeMove('r1c3')"></div>
+					<div class="box" id="r2c1" onclick="makeMove('r2c1')"></div>
+					<div class="box" id="r2c2" onclick="makeMove('r2c2')"></div>
+					<div class="box" id="r2c3" onclick="makeMove('r2c3')"></div>
+					<div class="box" id="r3c1" onclick="makeMove('r3c1')"></div>
+					<div class="box" id="r3c2" onclick="makeMove('r3c2')"></div>
+					<div class="box" id="r3c3" onclick="makeMove('r3c3')"></div>
+			   </div>
+			   <div id="scoreboard">
+			     <div id="scoreboardTitle">Scoreboard</div>
+			     <table>
+			     	<tr>
+			     		<th>Players</th>
+			     		<th>W</th>
+			     		<th>T</th>
+			     		<th>L</th>
+			     	</tr>
+			     	<tr>
+			     		<td>Player 1
+			     		<td id="player1Wins"></td>
+			     		<td id="player1Ties"></td>
+			     		<td id="player1Losses"></td>
+			     	</tr>
+			     	<tr>
+			     		<td>Player 2
+			     		<td id="player2Wins"></td>
+			     		<td id="player2Ties"></td>
+			     		<td id="player2Losses"></td>
+			     	</tr>
+			     </table>
+			   </div>
+		   </div>
 		</div>
-	</body>
+	  </body>
 <html>
